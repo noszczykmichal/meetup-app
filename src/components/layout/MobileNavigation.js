@@ -4,25 +4,23 @@ import FavoritesContext from "../../store/favorites-context";
 
 import classes from "./MobileNavigation.module.css";
 
-function MobileNavigation() {
+function MobileNavigation(props) {
     const favoritesCtx = useContext(FavoritesContext);
 
   return (
-    <header>
-      <nav>
-        <ul>
+      <nav className={classes['mobile-navbar']}>
+        <ul className={classes['mobile-navbar__items']}>
           <li>
-            <Link to="/">All Meetups</Link>
+            <Link to="/" onClick={props.linkClicked} className={classes['mobile-navbar__item']}>All Meetups</Link>
           </li>
           <li>
-            <Link to="/new-meetup">Add New Meetup</Link>
+            <Link to="/new-meetup" onClick={props.linkClicked} className={classes['mobile-navbar__item']}>Add New Meetup</Link>
           </li>
           <li>
-          <Link to="/favorites">My Favorites <span className={classes.badge}>{favoritesCtx.totalFavorites}</span></Link>
+          <Link to="/favorites" onClick={props.linkClicked} className={classes['mobile-navbar__item']}>My Favorites <span className={classes.badge}>{favoritesCtx.totalFavorites}</span></Link>
           </li>
         </ul>
       </nav>
-    </header>
   );
 }
 

@@ -1,0 +1,18 @@
+.trash__icon {
+  fill: #fff;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.trash__icon:hover,
+.trash__icon:active,
+.trash__icon:focus {
+  transform: scale(1);
+}
+
+@media (min-width: 992px) {
+  .trash__icon {
+    transform: scale(1.25);
+    margin-top: 2px;
+  }
+}
