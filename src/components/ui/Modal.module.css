@@ -1,4 +1,4 @@
-.modal-container{
+.modal-container {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -6,9 +6,8 @@
   position: absolute;
 }
 
-
-.modal{
-  background-color: blue;
+.modal {
+  background-color: #fff;
   height: 20%;
   width: 30%;
   display: flex;
@@ -17,36 +16,36 @@
   align-items: center;
   text-align: center;
   position: fixed;
+  z-index: 500;
   top: 20%;
   transform: translateY(-200%);
   opacity: 0;
   transition: opacity 2s ease-out, transform 2s ease-out;
 }
 
-.modal--active{
+.modal--active {
   opacity: 1;
   transform: translateY(0);
 }
 
-
-.modal__actions{
-    width: 80%;
-    padding: 0.5rem 0 1.5rem 0;
-    display: flex;
-    justify-content: space-around;
+.modal__actions {
+  width: 80%;
+  padding: 0.5rem 0 1.5rem 0;
+  display: flex;
+  justify-content: space-around;
 }
 
-.modal__action{
+.modal__action {
   color: #fff;
   padding: 0.5rem 1.5rem;
 }
 
-.modal__action--confirm{
+.modal__action--confirm {
   background-color: green;
   border: 1px solid green;
 }
 
-.modal__action--cancel{
+.modal__action--cancel {
   background-color: red;
   border: 1px solid red;
 }

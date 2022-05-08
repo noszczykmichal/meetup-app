@@ -1,9 +1,15 @@
 import classes from "./Modal.module.css";
 
-function Modal() {
+function Modal(props) {
+  let attachedClasses= [classes['modal']];
+
+  if(props.show){
+    attachedClasses=[classes['modal'], classes['modal--active']];
+  }
+
   return (
     <div className={classes['modal-container']}>
-      <div className={[classes['modal'], classes['modal--active']].join(' ')}>
+      <div className={attachedClasses.join(' ')}>
       <div className={classes["modal__text"]}>
         <p>This will delete all you favorite meetups!</p>
         <p>Do you want to continue?</p>

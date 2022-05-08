@@ -30,8 +30,8 @@ function MainNavigation(props) {
               <span className={classes.badge}>
                 {favoritesCtx.totalFavorites}
               </span>
-              <TrashIcon/>
             </Link>
+            <TrashIcon clicked={props.trashIconClicked}/>
           </li>
         </ul>
       </nav>

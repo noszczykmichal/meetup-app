@@ -1,4 +1,16 @@
-.trash__icon {
+.badge {
+  background-color: #77002e;
+  color: white;
+  border-radius: 12px;
+  height: 2rem;
+  width: 3rem;
+  margin: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge--trash-icon {
   fill: #fff;
   height: 1.5rem;
   width: 1.5rem;
