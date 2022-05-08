@@ -3,6 +3,7 @@ import { useContext } from "react";
 import FavoritesContext from "../../store/favorites-context";
 
 import classes from "./MobileNavigation.module.css";
+import TrashIcon from "../ui/TrashIcon";
 
 function MobileNavigation(props) {
   const favoritesCtx = useContext(FavoritesContext);
@@ -41,6 +42,7 @@ function MobileNavigation(props) {
             My Favorites{" "}
             <span className={classes['mobile-navbar__item--badge']}>{favoritesCtx.totalFavorites}</span>
           </Link>
+          <TrashIcon clicked={props.trashIconClicked}/>
         </li>
       </ul>
     </nav>
