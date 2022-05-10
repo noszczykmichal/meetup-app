@@ -40,11 +40,23 @@
 }
 
 .modal__action--confirm {
-  background-color: green;
-  border: 1px solid green;
+  background-color: #0e4f1f;
+  border-color: #0e4f1f;
+}
+
+.modal__action--confirm:hover,
+.modal__action--confirm:active {
+  background-color: #2ddf5c;
+  border-color: #2ddf5c;
 }
 
 .modal__action--cancel {
-  background-color: red;
-  border: 1px solid red;
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+
+.modal__action--cancel:hover,
+.modal__action--cancel:active{
+  background-color: #ff5454;
+  border-color: #ff5454;
 }
