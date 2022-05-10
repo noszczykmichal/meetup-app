@@ -5,7 +5,8 @@ const FavoritesContext = createContext({
   totalFavorites: 0,
   addFavorite: (favoriteMeetup)=>{},
   removeFavorite: (meetupId)=>{},
-  itemIsFavorite: (meetupId)=>{}
+  itemIsFavorite: (meetupId)=>{},
+  clearFavorite: ()=>{},
 });
 
 export function FavoritesContextProvider(props) {
@@ -27,12 +28,17 @@ export function FavoritesContextProvider(props) {
     return userFavorites.some((meetup) => meetup.id === meetupId);
   }
 
+  function clearFavoriteHandler(){
+    setUserFavorites([]);
+  }
+
   const context = {
     favorites: userFavorites,
     totalFavorites: userFavorites.length,
     addFavorite: addFavoriteHandler,
     removeFavorite: removeFavoriteHandler,
     itemIsFavorite: itemIsFavoriteHandler,
+    clearFavorite: clearFavoriteHandler,
   };
 
   return (
