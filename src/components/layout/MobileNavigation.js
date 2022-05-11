@@ -7,42 +7,35 @@ import TrashIcon from "../ui/TrashIcon";
 
 function MobileNavigation(props) {
   const favoritesCtx = useContext(FavoritesContext);
-  let attachedClasses=[classes['mobile-navbar']];
-  if(props.show){
-    attachedClasses=[classes['mobile-navbar'], classes['mobile-navbar--active']];
+  let attachedClasses = [classes["mobile-navbar"]];
+  if (props.show) {
+    attachedClasses = [
+      classes["mobile-navbar"],
+      classes["mobile-navbar--active"],
+    ];
   }
 
   return (
-    <nav className={attachedClasses.join(' ')}>
+    <nav className={attachedClasses.join(" ")}>
       <ul className={classes["mobile-navbar__items"]}>
-        <li>
-          <Link
-            to="/"
-            onClick={props.linkClicked}
-            className={classes["mobile-navbar__item"]}
-          >
+        <li className={classes["mobile-navbar__item"]}>
+          <Link to="/" onClick={props.linkClicked}>
             All Meetups
           </Link>
         </li>
-        <li>
-          <Link
-            to="/new-meetup"
-            onClick={props.linkClicked}
-            className={classes["mobile-navbar__item"]}
-          >
+        <li className={classes["mobile-navbar__item"]}>
+          <Link to="/new-meetup" onClick={props.linkClicked}>
             Add New Meetup
           </Link>
         </li>
-        <li>
-          <Link
-            to="/favorites"
-            onClick={props.linkClicked}
-            className={classes["mobile-navbar__item"]}
-          >
-            My Favorites{" "}
-            <span className={classes['mobile-navbar__item--badge']}>{favoritesCtx.totalFavorites}</span>
+        <li className={classes["mobile-navbar__item"]}>
+          <Link to="/favorites" onClick={props.linkClicked}>
+            My Favorites
           </Link>
-          <TrashIcon clicked={props.trashIconClicked}/>
+          <div className={classes["mobile-navbar__item--badge"]}>
+            <p>{favoritesCtx.totalFavorites}</p>
+          </div>
+          <TrashIcon clicked={props.trashIconClicked} />
         </li>
       </ul>
     </nav>

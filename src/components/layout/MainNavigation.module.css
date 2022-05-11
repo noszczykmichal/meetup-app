@@ -50,6 +50,10 @@
   .header li {
     margin-left: 3rem;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   
   .header a {
@@ -72,8 +76,13 @@
     background-color: #cc2062;
     color: white;
     border-radius: 12px;
+    height: 1.5rem;
+    width: 2rem;
     padding: 0 1rem;
-    margin: 0 0.5rem;
+    margin-left: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   

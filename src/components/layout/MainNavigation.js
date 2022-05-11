@@ -25,13 +25,11 @@ function MainNavigation(props) {
             <Link to="/new-meetup">Add New Meetup</Link>
           </li>
           <li>
-            <Link to="/favorites">
-              My Favorites{" "}
-              <span className={classes.badge}>
-                {favoritesCtx.totalFavorites}
-              </span>
-            </Link>
-            <TrashIcon clicked={props.trashIconClicked}/>
+            <Link to="/favorites">My Favorites</Link>
+            <div className={classes.badge}>
+              <p>{favoritesCtx.totalFavorites}</p>
+            </div>
+            <TrashIcon clicked={props.trashIconClicked} />
           </li>
         </ul>
       </nav>
