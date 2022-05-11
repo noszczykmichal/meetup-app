@@ -28,6 +28,7 @@
 .mobile-navbar__item {
   text-decoration: none;
   color: #77002e;
+  display: flex;
 }
 
 .mobile-navbar__item:hover {

@@ -7,13 +7,16 @@ import TrashIcon from "../ui/TrashIcon";
 
 function MobileNavigation(props) {
   const favoritesCtx = useContext(FavoritesContext);
-  let attachedClasses=[classes['mobile-navbar']];
-  if(props.show){
-    attachedClasses=[classes['mobile-navbar'], classes['mobile-navbar--active']];
+  let attachedClasses = [classes["mobile-navbar"]];
+  if (props.show) {
+    attachedClasses = [
+      classes["mobile-navbar"],
+      classes["mobile-navbar--active"],
+    ];
   }
 
   return (
-    <nav className={attachedClasses.join(' ')}>
+    <nav className={attachedClasses.join(" ")}>
       <ul className={classes["mobile-navbar__items"]}>
         <li>
           <Link
@@ -39,10 +42,12 @@ function MobileNavigation(props) {
             onClick={props.linkClicked}
             className={classes["mobile-navbar__item"]}
           >
-            My Favorites{" "}
-            <span className={classes['mobile-navbar__item--badge']}>{favoritesCtx.totalFavorites}</span>
+            My Favorites
           </Link>
-          <TrashIcon clicked={props.trashIconClicked}/>
+          <div className={classes["mobile-navbar__item--badge"]}>
+            <p>{favoritesCtx.totalFavorites}</p>
+          </div>
+          <TrashIcon clicked={props.trashIconClicked} />
         </li>
       </ul>
     </nav>
