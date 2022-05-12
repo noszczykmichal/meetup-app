@@ -7,7 +7,9 @@ function Backdrop(props){
         attachedClasses=[classes.backdrop, classes.open];
     }
 
-    return <div className={attachedClasses.join(' ')} onClick={props.clicked}></div>
+    return <div className={classes.container}>
+        <div className={attachedClasses.join(' ')} onClick={props.clicked}></div>
+    </div>
 }
 
 export default Backdrop;
