@@ -1,20 +1,25 @@
+import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import AllMeetupsPage from "./pages/AllMeetups";
-import NewMeetupPage from "./pages/NewMeetup";
-import FavoritesPage from "./pages/Favorites";
+
 import Layout from "./components/layout/Layout";
+import AllMeetupsPage from "./pages/AllMeetups";
+
+const NewMeetupPage=React.lazy(()=>import('./pages/NewMeetup'));
+const FavoritesPage=React.lazy(()=>import('./pages/Favorites'));
 
 function App() {
   return (
     <Layout>
-      <Routes>
-        <Route path="/" exact element={<AllMeetupsPage />} />
-        <Route path="/new-meetup" element={<NewMeetupPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-      </Routes>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Routes>
+          <Route path="/" exact element={<AllMeetupsPage />} />
+          <Route path="/new-meetup" element={<NewMeetupPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+        </Routes>
+      </Suspense>
     </Layout>
   );
 }
 
-export default App;
+export default App; 
