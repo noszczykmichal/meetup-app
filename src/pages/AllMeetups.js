@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import MeetupList from "../components/meetups/MeetupList";
+import Spinner from '../components/ui/Spinner';
 
 function AllMeetupsPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,11 +28,7 @@ function AllMeetupsPage() {
   let currContent;
 
   if (isLoading) {
-    currContent = (
-      <section>
-        <p>It's loading</p>
-      </section>
-    );
+    currContent = <Spinner/>
   } else {
     currContent = <MeetupList data={loadedMeetups} />;
   }
