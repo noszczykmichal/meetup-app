@@ -5,6 +5,7 @@
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
+* [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 * [Acknowledgements](#acknowledgements)
@@ -14,7 +15,7 @@
 ## General Information
 - This project was built whilst doing course on React.js (more info in the section [Acknowledgements](#acknowledgements)).
 - In contrary to what was originally built by the instructor I've modified on my own the project to use React 18. 
-- Additionally I've modified app to be responsive and to look good on all devices (at first project was focused on the desktops). I've added few components need for improving UI e.g. animated Backdrop, Modal, Spinner etc.
+- Additionally I've modified app to be responsive and to look good on all devices (at first project was focused on the desktops). I've added few components needed for improving UI e.g. animated Backdrop, Modal, Spinner etc.
 
 
 ## Technologies Used
@@ -22,6 +23,13 @@
 - [React-DOM](https://www.npmjs.com/package/react-dom)
 - [React-Router](https://github.com/remix-run/react-router)
 - [ESLint](https://www.npmjs.com/package/eslint)
+
+
+## Features
+Project allows to:
+- Save meetups to the database stored on Firebase
+- View the meetups saved in the database
+- Mark some of the available meetups as favorite one
 
 
 ## Screenshots
@@ -39,7 +47,6 @@ $cd meetup-app
 $npm install
 #Run the app
 $npm start
-
 ```
 
 ## Acknowledgements
