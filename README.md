@@ -1,5 +1,5 @@
 # Meetup app
-> A small app for creating and managing meetups build with React.js
+> A small app for creating and managing meetups build with React.js     
 > Check live demo [_here_](https://meetup-app-ca8e7.web.app/).
 
 ## Table of Contents
