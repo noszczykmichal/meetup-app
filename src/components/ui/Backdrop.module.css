@@ -1,11 +1,11 @@
 .backdrop{
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    z-index: 400;
     top: 0;
     left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 400;
 }
 
 .backdrop--open{
@@ -18,7 +18,7 @@
 
 @keyframes backdropOpen{
     0%{
-        opacity: 0
+        opacity: 0;
     }
     100%{
         opacity: 1;
