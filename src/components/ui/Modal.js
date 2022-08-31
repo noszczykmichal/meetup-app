@@ -1,17 +1,24 @@
+import { CSSTransition } from "react-transition-group";
+
 import classes from "./Modal.module.css";
 
 function Modal(props) {
-  let attachedClasses = [classes["modal"]];
-
-  if (props.show) {
-    attachedClasses = [classes["modal"], classes["modal--active"]];
-  }
 
   return (
-    <div className={classes["modal-container"]}>
-      <div className={attachedClasses.join(" ")}>
+    <CSSTransition
+      in={props.show}
+      timeout={500}
+      classNames={{
+        enter: '',
+        enterActive: classes['modal--open'],
+        exit: '',
+        exitActive: classes['modal--closed']
+      }}
+      mountOnEnter
+      unmountOnExit>
+      <div className={classes.modal}>
         <div className={classes["modal__text"]}>
-          <p>This will delete all you favorite meetups!</p>
+          <p>This will delete all your favorite meetups!</p>
           <p>Do you want to continue?</p>
         </div>
         <div className={classes["modal__actions"]}>
@@ -35,7 +42,7 @@ function Modal(props) {
           </button>
         </div>
       </div>
-    </div>
+    </CSSTransition>
   );
 }
 
