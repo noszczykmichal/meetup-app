@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import MeetupList from "../components/meetups/MeetupList";
-import Spinner from '../components/ui/Spinner';
+import Spinner from "../components/ui/Spinner";
 
 function AllMeetupsPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ function AllMeetupsPage() {
           fetchedMeetups.push({
             id: meetup,
             ...data[meetup],
-          })
+          }),
         );
         setIsLoading(false);
         setLoadedMeetups(fetchedMeetups);
@@ -28,9 +28,9 @@ function AllMeetupsPage() {
   let currContent;
 
   if (isLoading) {
-    currContent = <Spinner/>
+    currContent = <Spinner />;
   } else {
-    currContent = <MeetupList data={loadedMeetups} />;
+    currContent = <MeetupList meetups={loadedMeetups} />;
   }
 
   return (

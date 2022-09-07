@@ -1,35 +1,35 @@
 import { useContext } from "react";
+import PropTypes from "prop-types";
 
 import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
 import FavoritesContext from "../../store/favorites-context";
 
-function MeetupItem(props) {
+function MeetupItem({ meetupData }) {
   const favoritesCtx = useContext(FavoritesContext);
 
-  const itemIsFavorite = favoritesCtx.itemIsFavorite(props.data.id);
+  const itemIsFavorite = favoritesCtx.itemIsFavorite(meetupData.id);
 
   function toggleFavStatusHandler() {
     if (itemIsFavorite === false) {
-      return favoritesCtx.addFavorite(props.data);
-    } else {
-      return favoritesCtx.removeFavorite(props.data.id);
+      return favoritesCtx.addFavorite(meetupData);
     }
+    return favoritesCtx.removeFavorite(meetupData.id);
   }
 
   return (
     <li className={classes.item}>
       <Card>
         <div className={classes.image}>
-          <img src={props.data.image} alt={props.data.description} />
+          <img src={meetupData.image} alt={meetupData.description} />
         </div>
         <div className={classes.content}>
-          <h3>{props.data.title}</h3>
-          <address>{props.data.address}</address>
-          <p>{props.data.description}</p>
+          <h3>{meetupData.title}</h3>
+          <address>{meetupData.address}</address>
+          <p>{meetupData.description}</p>
         </div>
         <div className={classes.actions}>
-          <button onClick={toggleFavStatusHandler}>
+          <button type="button" onClick={toggleFavStatusHandler}>
             {itemIsFavorite ? "Remove from Favorites" : "To Favorites"}
           </button>
         </div>
@@ -37,5 +37,15 @@ function MeetupItem(props) {
     </li>
   );
 }
+
+MeetupItem.propTypes = {
+  meetupData: PropTypes.shape({
+    id: PropTypes.string,
+    address: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    title: PropTypes.string,
+  }).isRequired,
+};
 
 export default MeetupItem;
