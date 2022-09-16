@@ -18,6 +18,7 @@
 - This project was built whilst doing course on React.js (more info in the section [Acknowledgements](#acknowledgements)).
 - In contrary to what was originally built by the instructor I've modified on my own the project to use React 18.
 - Additionally I've modified app to be responsive and to look good on all devices (at first project was focused on the desktops). I've added few components needed for improving UI e.g. animated Backdrop, Modal, Spinner etc.
+- This project has also copy that uses class-based components.([available here](https://github.com/noszczykmichal/meetup-app__with-class-based-components))
 
 ## Technologies Used
 
