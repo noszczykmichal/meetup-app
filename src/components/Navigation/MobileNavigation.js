@@ -1,24 +1,30 @@
 import PropTypes from "prop-types";
+import { CSSTransition } from "react-transition-group";
 
 import classes from "./MobileNavigation.module.css";
 import NavigationItems from "./NavigationItems/NavigationItems";
 
 function MobileNavigation({ show, linkClicked, trashIconClicked }) {
-  let attachedClasses = [classes["mobile-navbar"]];
-  if (show) {
-    attachedClasses = [
-      classes["mobile-navbar"],
-      classes["mobile-navbar--active"],
-    ];
-  }
-
   return (
-    <nav className={attachedClasses.join(" ")}>
-      <NavigationItems
-        onLinkClick={linkClicked}
-        onTrashIconClick={trashIconClicked}
-      />
-    </nav>
+    <CSSTransition
+      in={show}
+      timeout={500}
+      classNames={{
+        enter: "",
+        enterActive: classes["mobile-navbar--open"],
+        exit: "",
+        exitActive: classes["mobile-navbar--closed"],
+      }}
+      mountOnEnter
+      unmountOnExit
+    >
+      <nav className={classes["mobile-navbar"]}>
+        <NavigationItems
+          onLinkClick={linkClicked}
+          onTrashIconClick={trashIconClicked}
+        />
+      </nav>
+    </CSSTransition>
   );
 }
 
