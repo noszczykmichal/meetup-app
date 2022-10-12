@@ -37,7 +37,7 @@ function Layout({ children }) {
   };
 
   return (
-    <div>
+    <>
       <Backdrop clicked={hideComponentsHandler} show={backdropVisible} />
       <Toolbar
         toggleClicked={navbarHandler}
@@ -55,7 +55,7 @@ function Layout({ children }) {
         cancelButtonHandler={hideComponentsHandler}
       />
       <main className={classes.main}>{children}</main>
-    </div>
+    </>
   );
 }
 
